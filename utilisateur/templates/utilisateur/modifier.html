@@ -1,0 +1,20 @@
+{% extends 'utilisateur/index.html'%}
+{% block content %}
+<div class="container d-flex justify-content-center">
+
+<div class="row" offset-2>
+	<div class="col-sm-8">
+		<form action="" method="post">
+			{% csrf_token %}
+			{{form.as_p}}
+			<input type="submit" class="btn btn-success" value="Modifier">
+			
+		</form>
+			}
+		
+	</div>
+</div>
+<p>modifier les informations de {{id}}</p>
+<a href="{% url 'afficher' %}" class="btn btn-primary">Utilisateur existant</a>
+</div>
+{% endblock content %}

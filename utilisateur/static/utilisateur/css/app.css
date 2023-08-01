@@ -1,0 +1,58 @@
+html {
+    font-family : Arial;
+}
+
+/* Le menu de la barre latérale */
+. barre latérale {
+    hauteur :  100 % ; /* Pleine hauteur : supprimez ceci si vous voulez une hauteur "auto" */
+    largeur :  220 px ; /* Définit la largeur de la barre latérale */
+    position : fixe ; /* Barre latérale fixe (reste en place lors du défilement) */
+    z-index :  1 ; /* Reste au top */
+    haut :  0 ; /* Reste au top */
+    gauche :  0 ;
+    couleur de fond :  # 1d3030 ;
+    couleur :   # ffffe6 ;
+    débordement-x : caché ; /* Désactiver le défilement horizontal */
+    padding-top :  15 px ;
+    rembourrage gauche :  10 px ;
+    padding-right :  10 px ;
+}
+
+/* Les liens du menu de navigation */
+. barre latérale  un {
+    texte-décoration : aucun ;
+    couleur :   # ffffe6 ;
+    affichage : bloc ;
+}
+
+/* Lorsque vous passez la souris sur les liens de navigation, changez leur couleur */
+. barre latérale  a : survolez {
+    couleur :  # f1f1f1 ;
+}
+
+/* Styler le contenu de la page */
+. principal {
+    marge gauche :  240 px ; /* Identique à la largeur de la barre latérale */
+    rembourrage :  20 px ;
+}
+
+. avatar {
+    largeur :  80 % ;
+    rayon de bordure :  10 % ;
+    affichage : bloc ;
+    marge : auto ;
+    padding-top :  10 px ;
+    rembourrage bas :  10 px ;
+}
+
+. grille-conteneur {
+    affichage : grille ;
+    grille-template-columns : auto auto auto;
+    rembourrage :  20 px ;
+    text-align : center;
+}
+
+. poster  img {
+    largeur :  80 % ;
+    rayon de bordure :  5 px ;
+}

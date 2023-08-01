@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+ 
+  <link rel="stylesheet" href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %} ">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <a href="{% static 'index2.html' %}"><b>IAM</b></a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+     
+      <p class="login-box-msg">Connectez-vous</p>
+     <div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">se connecter</h4>
+        <br>
+         {% for message in messages %}
+      {{ message }}
+      {% endfor %}
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+
+
+
+         <form method="post" action="" >
+        {% csrf_token  %}
+         <div class="input-group mb-3">
+          <input type="text" name="username" id='username' class="form-control" placeholder="utilisateur" required>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="md-form mb-4">
+          
+           <div class="input-group mb-3">
+          <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>  
+        </div>
+
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+         <button type="submit" class="btn btn-primary">soumetre</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text-center">
+  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalSubscriptionForm">Lancer
+    Formulaire de connexion</a>
+</div>
+ </form>
+
+
+      <div class="social-auth-links text-center mb-3">
+        <p></p>
+        <a href="#" class="btn btn-block btn-primary">
+          <i class="fab fa-facebook mr-2"></i> Se connecter à l'aide de Facebook
+        </a>
+        <a href="#" class="btn btn-block btn-danger">
+          <i class="fab fa-google-plus mr-2"></i> Se connecter à l'aide de Google+
+        </a>
+      </div>
+      <p class="mb-1">
+        <a href="{% url 'password_reset'%}">J'ai oublié mon mot de passe</a>
+      </p>
+      <p class="mb-1">
+        <a href="{% url 'change_password'%}">changer mot de passe</a>  
+      </p>
+      <p class="mb-0">
+        <a href="{% url 'loginRegister' %}" class="text-center">Enregistrer une nouvelle adhésion</a>
+      </p>
+    </div>
+   
+  </div>
+</div>
+
+
+<!-- jQuery -->
+<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'dist/js/adminlte.min.js' %}"></script>
+
+</body>
+</html>

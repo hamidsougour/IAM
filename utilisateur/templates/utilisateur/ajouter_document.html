@@ -1,0 +1,21 @@
+{% extends 'utilisateur/base.html'%}
+{% block content %}
+<br><hr><br><br>
+<div class="container min-vh-100 d-flex justify-content-center">
+<br>
+<div class="col-sm-8 col-sm-5 col-xs-5">
+<div id="content" class="p-6 p-md-5 pt-5">
+
+ <h1>Ajouter un nouveau document</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Ajouter">
+    </form>
+    <a href="{% url 'list_documents' %}">Retour à la liste des documents</a>
+</div>
+
+</div>
+</div>
+</div>
+{% endblock content %}

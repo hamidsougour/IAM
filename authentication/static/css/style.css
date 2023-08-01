@@ -1,0 +1,99 @@
+
+
+
+
+header,footer{
+	background-color: grey;
+	min-height: 10vh;
+}
+
+
+
+html {
+    font-family: Arial;
+}
+
+/* The sidebar menu */
+.sidebar{
+    height: 101%; /* Hauteur totale : enlevez ceci si vous voulez une hauteur "auto" */
+    width: 200px;/* Définir la largeur de la barre latérale */
+    position: fixed; /* Sidebar fixe (reste en place lors du défilement) */
+    z-index: 1; /* restez au sommet */
+    top: 0; /* Rester au sommet */
+    left: 0;
+    background-color:grey ;
+    color:  #ffffe6;
+    overflow-x: hidden; /* Désactiver le défilement horizontal */
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Les liens du menu de navigation */
+.sidebar a {
+    text-decoration: none;
+    color:  #ffffe6;
+    display: block;
+}
+
+/* Lorsque vous passez la souris sur les liens de navigation, changez leur couleur */
+.sidebar a:hover {
+    color: #0dcaf0;
+}
+
+/* Style page content */
+/* .main {
+    margin-left: 240px; /* Same as the width of the sidebar */
+   /* padding: 20px;
+}
+*/
+.avatar {
+    width: 80%;
+    border-radius: 10%;
+    display: block;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 20px;
+    text-align: center;
+}
+*/
+.post img {
+    width: 80%;
+    border-radius: 5px;
+}
+
+ body { background-image : url("images/default_profil.png") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+
+
+ }
+
+ .form_creat_blog{
+    padding: 100px;
+    height: 100px;
+
+ }
+
+ .form_create_blog{
+
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: #e2b9b9;
+  color: white;
+  margin-bottom: 10px;
+  font-size: 20px;
+ }
+ footer {
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+}

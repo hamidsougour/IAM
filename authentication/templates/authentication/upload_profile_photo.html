@@ -1,0 +1,18 @@
+{% extends 'utilisateur/base.html' %}
+{% block content %}
+<br><hr><br><br>
+<div class="container min-vh-100 d-flex justify-content-center">
+<br>
+<div class="row">
+    <div class="">
+    <h3>Téléverser une photo de profil</h3>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+        <button type="submit" >Publier</button>
+    </form>
+</div>
+</div>
+</div>
+{% endblock %}

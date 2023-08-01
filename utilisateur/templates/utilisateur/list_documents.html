@@ -1,0 +1,26 @@
+{% extends 'utilisateur/base.html'%}
+{% block content %}
+
+    <br><hr><br><br>
+<div class="container min-vh-100 d-flex justify-content-center">
+<br>
+<div class="col-sm-8 col-sm-5 col-xs-5">
+<div id="content" class="p-6 p-md-5 pt-5">
+    <h1>Liste des documents archivés</h1>
+    <ul>
+        {% for document in documents %}
+            <li>
+                <h6>Nom du document:{{ document.titre }}</h6> - {{ document.description }}<br>
+               cet document a ete publié le {{ document.created_at }}
+               
+                <a href="{{ document.pdf.url }}" target="_blank">Voir le document</a>
+                <br>
+             <a href="{% url 'lire_document' document.id %}">Lire le document</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'ajouter_document' %}">Ajouter un document</a>
+</div>
+</div>
+</div>
+{% endblock content %}

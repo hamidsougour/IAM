@@ -1,0 +1,17 @@
+{% extends 'utilisateur/base.html'%}
+{% block content %}
+<br><hr><br><br>
+<div class="container min-vh-100 d-flex justify-content-center">
+<br>
+<div class="col-sm-8 col-sm-5 col-xs-5">
+<div id="content" class="p-6 p-md-5 pt-5">
+<h1>Liste des discussions</h1>
+<ul>
+    {% for discussion in discussions %}
+        <li><a href="{% url 'detail_discussion' discussion.id %}">{{ discussion.titre }}</a></li>
+    {% endfor %}
+</ul>
+</div>
+</div>
+</div>
+{% endblock content %}

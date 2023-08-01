@@ -1,0 +1,6 @@
+{% autoescape off %}
+le systeme de gestion des identités et des accés
+{{ name }}
+cliquer pour confirmer votre email
+lien:https//{{domain}} {% url 'activate' uidb64=uid token=token %}
+{% endautoescape %}

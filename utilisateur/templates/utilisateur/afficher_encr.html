@@ -1,0 +1,45 @@
+{% extends 'utilisateur/index.html'%}
+{% block content %}
+<div class="col-sm-8">
+	<h2 class="text-center alert alert-danger">les encadrants</h2>
+	{% if afficher_encr %}
+		<table class="table table-hover">
+      {% csrf_token%}
+  <thead>
+  	
+    <tr>
+     <th scope="col">id</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  	{% for i in afficher_encr %}
+    <tr>
+      <th scope="row">{{afficher_encr.id}}</th>
+      <td>{{i.name}}</td>
+      <td>{{i.last_name}}</td>
+      <td>{{i.email}}</td>
+      <td>
+      	<a href="{% url 'modifier_encr' i.id %}" class="btn btn-warning btn-sm">Modifier</a>
+      
+        <form action="{% url 'delete_data' i.id %}" class="d-inline" method="post">
+          {% csrf_token %}
+        <input type="submit" class="col-sm-4 btn btn-danger" name="" value="suprimer"> 
+          
+        </form>
+
+      </td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+<a href="{% url 'M_stage' %}" class="btn btn-primary">ajouter nouveau</a>
+	{% else %}
+	<p class="text-center alert alert-warning">aucun encadrant des stagiaire ne disponible pour le moment</p>
+	{% endif %}
+</div>
+{% endblock %}

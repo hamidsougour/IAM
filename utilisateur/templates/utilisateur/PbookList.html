@@ -1,0 +1,87 @@
+{% extends 'utilisateur/base.html'%}
+{% block content %}
+	
+	
+
+<div class="container-fluid">
+	<div class="row" style="padding-top: 87px">
+		<div class="col-sm-1" style="color:red">
+		</div>
+		
+			<div class="col-sm-10">
+				<div class="card mb-3">
+					<div class="card-header">
+						<i class="fas fa-table text-primary"></i>
+						livre ajouter recenment		
+					</div>
+					<div class="card-body">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a href="#"> </a>
+								<a class="btn btn-sm btn-success" href="#" style="padding: 8px; float: right; background-color: green; color: white;">ajouter livre</a>
+							</li>	
+						</ol>
+						<div class="card mb-3">
+							<div class="card-body">
+								<div class="table-responsive">
+									<table>
+										
+											<thead>
+												<tr>
+													<th>book cover</th>
+													<th>book title</th>
+													<th>read</th>
+													<th>download</th>
+												</tr>
+											</thead>
+											<tbody>
+												{% if books %}
+												{% for book in books %}
+												<tr>
+													<td>{{book.id}}</td>
+													<td>
+														{% if book.image %}
+														<img src="{{book.image.url}}" alt="{{book.title}}" style="width: 100px;height: 100px;">
+														{% else %}
+														<span class="text-muted">pas image</span>
+														{% endif %}
+													</td>
+
+
+
+													<td>{{book.title}}</td>
+													<td>
+														{% if book.pdf %}
+														<a href="{{book.pdf.url}}" class="btn btn-outline-light" target="_blank">voir pdf</a>
+														{% else %}
+														<span class="text-muted">aucun pdf</span>
+														{% endif %}
+													</td>
+													<td>
+														{% if book.image %}
+														<a href="{{book.pdf.url}}" download class="btn btn-outline-success" target="_blank">voir pdf</a>
+														{% else %}
+														<span class="text-muted">aucun pdf</span>
+														{% endif %}
+
+													</td>
+												</tr>
+												{% endfor %}
+												{% endif %}
+											</tbody>
+									</table>
+								</div>
+								
+							</div>	
+							
+						</div>
+					</div>
+				</div>
+				
+			</div>
+
+	</div>
+</div>
+
+
+{% endblock %}

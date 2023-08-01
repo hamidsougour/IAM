@@ -1,0 +1,16 @@
+{% extends 'utilisateur/index.html'%}
+{% block content %}
+<div class="row" offset-2>
+	<div class="col-sm-8">
+		<form action="" method="post">
+			{% csrf_token %}
+			{{form.as_p}}
+			<input type="submit" class="btn btn-success" value="Modifier">
+		</form>
+			}
+		
+	</div>
+</div>
+<p>modifier les informations de {{id}}</p>
+<a href="{% url 'afficher_encr' %}" class="btn btn-primary">retour en arriere</a>
+{% endblock content %}

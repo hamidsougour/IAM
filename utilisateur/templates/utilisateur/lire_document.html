@@ -1,0 +1,17 @@
+<br><hr><br><br>
+<div class="container min-vh-100 d-flex justify-content-center">
+<br>
+<div class="row">
+    <div class="">
+<head>
+    <title>{{ document.titre }}</title>
+</head>
+<body>
+    <h1>{{ document.titre }}</h1>
+    <p>{{ document.description }}</p>
+    <a href="{{ document.pdf.url }}" target="_blank">Lire le document</a>
+    <a href="{% url 'list_documents' %}">Retour à la liste des documents</a>
+</body>
+</div>
+</div>
+</div>

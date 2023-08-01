@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>enregistrement iam</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<script src="https://kit.fontawesome.com/14273d579a.js" crossorigin="anonymous"></script>
+<body>
+
+
+<div class="parent">
+	<div class="form">
+	<h2>s'inscrire</h2>
+	{% for message in messages%}
+	{{message}}
+	{% endfor %}
+
+
+<div class="sidebar">
+        <h1>Profile</h1>
+        {% if user.is_authenticated %}
+        <p>
+            salut,{{user}}!
+        </p>
+        {% if user.profil_photo %}
+        <img class="avatar" src="{{ user.profil_photo.url }}" >
+        {% else %}
+ <img class="avatar" src="{% static 'images/default_profile.png'%}" height="42" width="42">
+        {% endif %}
+        <p><a href="{% url 'index' %}">Accueil</a></p>
+
+		{% if perms.blog.add_photo %}
+        <p><a href="#"></a></p>
+        {% endif %}
+        <p><a href="#"></a></p>
+        <p><a href="#"></a></p>
+        <p><a href="#"></a></p>
+        <p><a href="#">se deconnecter</a></p>
+        {% endif %}
+    </div>
+    <div class="main">
+
+
+
+	<form action="{% url 'enregistrement' %}" method="POST">
+		<fieldset>
+		{% csrf_token  %}
+		<label for="fname"></label><br>
+		<input type="text" name="fname" placeholder="entrez votre nom svp"><br>
+		
+		<label for="fname"></label><br>
+		<input type="text" name="sname" placeholder="entrez votre prenom svp"><br>
+		   
+		<label for="fname"></label><br>
+		<input type="text" name="user_name" placeholder="entrez votre nom svp"><br>
+		
+		<label for="fname"></label><br>
+		<input type="email" name="email" placeholder="entrez votre email svp"><br>
+		
+		<label for="fname"></label><br>
+		<input type="password" name="pass" placeholder="entrez votre nom svp"><br>
+		<button type="submit" class="btn btn-primary">Envoyer</button> <br>
+		<p>vous avez deja un compte? <a href="{% url 'password' %}">connecter</a></p>
+		</fieldset>
+	</form>
+	</div>	
+</div>
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

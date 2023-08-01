@@ -1,0 +1,23 @@
+{% extends 'utilisateur/base.html'%}
+{% block content %}
+<br><hr><br><br>
+<div class="container min-vh-100 d-flex justify-content-center">
+<br>
+<div class="row">
+	<div class="">
+		<h1>ajouter un stagiaire</h1>
+		<form action="" method="POST">
+			<fieldset>
+				<div class="mb-3">
+			{% csrf_token %}
+			{{form.as_p}}
+		<button type="submit" class="btn btn-primary">Envoyer</button>
+		<a href="{% url 'afficher' %}" class="btn btn-primary">Utilisateur existant</a>
+		</div>
+	</fieldset>
+</form>
+	</div>
+	
+</div>
+</div>
+{% endblock content %}

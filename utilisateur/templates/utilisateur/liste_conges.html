@@ -1,0 +1,11 @@
+<head>
+    <title>Liste des congés</title>
+</head>
+<body>
+    <h1>Liste des congés</h1>
+    <ul>
+        {% for conge in conges %}
+            <li>{{ conge.type_conge }} - {{ conge.demandeur.username }} - {{ conge.date_debut }} - {{ conge.date_fin }}</li>
+        {% endfor %}
+    </ul>
+</body>
